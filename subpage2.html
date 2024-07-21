@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+
+<link rel="shortcut icon" href="favicon.ico" >
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="styles.css">
+  <title>Strona internetowa</title>
+  <title>Zmiana motywu</title>
+  <link rel="stylesheet" id="theme-link">
+  
+  
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+body {
+  text-align: center;
+}
+
+nav {
+  background-color: #333;
+  padding: 10px 0;
+  position: relative;
+  width: 100%;
+}
+
+.dropdown {
+  display: block;
+  width: 100%;
+  position: relative; /* Ensure that the dropdown content is positioned relative to the dropdown */
+}
+
+.dropdown > a {
+  color: white; /* Color of the "Menu" text */
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+  text-align: center;
+  background-color: #333; /* Optional: Make sure the background matches the nav color */
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content a {
+  color: black;
+  text-decoration: none;
+  display: block;
+  padding: 15px;
+  font-size: 18px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+  border-radius: 5px;
+}}
+
+.subpage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.subpage h2 {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.subpage p {
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom 20px;
+}
+
+.subpage img {
+  width: 350px;
+  height: auto;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #333333;
+  color: white;
+  padding: 10px;
+}
+
+@keyframes spin {
+    from {transform:rotate(0deg);}
+    to {transform:rotate(360deg);}
+}
+
+.subpage img:hover {
+    animation-name: spin; 
+    animation-duration: .5s; 
+    animation-iteration-count: infinite; 
+    animation-timing-function: linear; 
+}
+
+.image-slider {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.image-slider-inner {
+    animation: slide 10s linear infinite;
+}
+
+@keyframes slide {
+    from { transform: translateX(125%); }
+    to { transform: translateX(-80%); }
+}
+
+.image-slider img {
+    height: 200px;
+    margin-right: 500px;
+}
+
+button {
+      background-color: #333;
+      border: none;
+      color: white;
+      padding: 8px 16px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 14px;
+      border-radius: 8px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    button:hover {
+      background-color: #807e7e;
+    }
+
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="dropdown">
+    <a>Menu</a>
+    <div class="dropdown-content">
+      <a href="subpage1.html">Projekty</a>
+      <a href="index.html">Strona główna</a>
+      <a href="subpage2.html">Strony</a>
+    </div>
+  </div>
+</nav>
+
+<div class="subpage">
+<h2>Strony</h2>
+<p>Linki do Stron</p>
+<img src="Logo.png" alt="Logo">
+</div>
+
+<div>
+
+   <button onclick="changeTheme()">Zmień motyw</button>
+
+    <script>
+        let theme = "light";
+
+        const themeLink = document.getElementById("theme-link");
+
+        function changeTheme() {
+            if (theme === "light") {
+                theme = "dark";
+                themeLink.setAttribute("href", "dark.css");
+            } else {
+                theme = "light";
+                themeLink.setAttribute("href", "light.css");
+            }
+        }
+    </script>
+	
+<div class="image-slider">
+    <div class="image-slider-inner">
+        <img src="samolot.png" alt="Image 1">
+        <img src="samolot.png" alt="Image 2">
+        <img src="samolot.png" alt="Image 3">
+    </div>
+</div>
+
+<div class="footer">
+<p>&copy; Lean-Enjoyer</p>
+</div>
+
+</body>
+</html>
